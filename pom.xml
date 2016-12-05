@@ -6,6 +6,7 @@
 
     <name>practeeth</name>
     <description>practice code snippet in java</description>
+    <url>https://github.com/xhwSkhizein/practeeth</url>
 
     <developers>
         <developer>
@@ -68,35 +69,22 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.6</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>sonatype-nexus-staging</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.7.5.201505241946</version>
-                <executions>
-                    <execution>
-                        <id>prepare-agent</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.eluder.coveralls</groupId>
-                <artifactId>coveralls-maven-plugin</artifactId>
-                <version>4.0.0</version>
-            </plugin>
         </plugins>
     </build>
+    <!--
+     |  deploy to remote repository
+     |  @see https://maven.apache.org/guides/getting-started/index.html#How_do_I_deploy_my_jar_in_my_remote_repository
+     -->
+    <distributionManagement>
+        <!--<repository>-->
+            <!--<id>archiva.internal</id>-->
+            <!--<name>Internal Release Repository</name>-->
+            <!--<url>http://nexus.gethehe.com/nexus/content/repositories/releases/</url>-->
+        <!--</repository>-->
+        <!--<snapshotRepository>-->
+            <!--<id>archiva.snapshots</id>-->
+            <!--<name>Internal Snapshot Repository</name>-->
+            <!--<url>http://nexus.gethehe.com/nexus/content/repositories/snapshots/</url>-->
+        <!--</snapshotRepository>-->
+    </distributionManagement>
 </project>
